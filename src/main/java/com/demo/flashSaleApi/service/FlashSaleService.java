@@ -11,6 +11,7 @@ import com.demo.flashSaleApi.model.FlashSale;
 import com.demo.flashSaleApi.pojo.PurchaseResult;
 import com.demo.flashSaleApi.pojo.RegistrationResult;
 import com.demo.flashSaleApi.registration.IregistrationClient;
+import com.demo.flashSaleApi.registration.RegistrationClient;
 import com.demo.flashSaleApi.repository.BuyerRepository;
 import com.demo.flashSaleApi.repository.FlashSaleRepository;
 import com.demo.flashSaleApi.util.Constants;
@@ -27,7 +28,7 @@ public class FlashSaleService implements IflashSaleService {
     private BuyerRepository buyerRepository;
 
     @Autowired
-   private IregistrationClient registrationClient;
+   private RegistrationClient registrationClient;
 
     @Autowired
     private ICacheService<String, Integer> cacheService;

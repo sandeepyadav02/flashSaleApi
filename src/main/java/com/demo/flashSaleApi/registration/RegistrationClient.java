@@ -3,6 +3,7 @@ package com.demo.flashSaleApi.registration;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.demo.flashSaleApi.model.Buyer;
@@ -14,7 +15,7 @@ import com.demo.flashSaleApi.pojo.RegistrationStatus;
 import com.demo.flashSaleApi.repository.RegistrationRepository;
 import com.google.common.collect.Lists;
 
-
+@Service(value = "registrationClient")
 public class RegistrationClient implements IregistrationClient {
 	
 	@Autowired
@@ -28,11 +29,6 @@ public class RegistrationClient implements IregistrationClient {
         return Lists.newArrayList(registrationRepository.findAll());
     }
 
-    /*@Override
-    @Transactional(readOnly = true)
-    public Registration findRegistrationByFlashsaleBuyer(final FlashSale flashSale, final Buyer buyer) {
-        return registrationRepository.getOne(RegistrationPredicates.registrationWithBuyerAndFlashsale(flashSale, buyer));
-    }*/
 
     @Override
     @Transactional(readOnly = false)
